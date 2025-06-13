@@ -1,0 +1,11 @@
+.home {
+
+    &--informations {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 300px;
+
+        margin-top: 150px;
+    }
+}

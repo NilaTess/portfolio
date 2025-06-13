@@ -18,8 +18,23 @@ body {
     background-color: var(--white);
     width: 100vw;
     min-height: 100vh;
-    overflow: scroll;
 }
+
+body, html {
+    overflow-x: hidden;
+}
+
+.black {
+    background-color: var(--black);
+}
+
+.separator {
+    padding: 1.3px;
+    margin: 0 2% 0 0;
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+  }
 
 
 

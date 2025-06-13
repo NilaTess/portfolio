@@ -1,0 +1,36 @@
+.information {
+    display: flex;
+    flex-direction: row;
+
+    &--details {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+
+            margin-bottom: 5px;
+        }
+
+        p:last-of-type {
+            margin-top: 15px;
+            text-align: justify;
+        }
+    }
+}
+
+.presentation-right {
+    display : flex;
+    justify-content: end;
+    text-align: end;
+    align-self: flex-end; 
+
+    p:last-of-type{
+        direction:rtl;
+    }
+
+    .separator {
+        padding: 1.3px;
+        margin: 0 0 0 2%;
+    }
+    
+}

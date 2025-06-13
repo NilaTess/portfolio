@@ -1,0 +1,14 @@
+<div class="home">
+    <app-personal-summary [visibleElements]="visibleElements"></app-personal-summary>
+    <app-contact></app-contact>
+    <div class="home--informations" >
+        @for (sectionInformation of sectionInformationsList; track $index) {
+
+            <app-information-div 
+                [informationsList]="sectionInformation.informationsList" 
+                [divName]="sectionInformation.section" 
+                [visibleElement]="visibleElements[$index + 2]"
+            ></app-information-div>
+        }
+    </div>
+</div>

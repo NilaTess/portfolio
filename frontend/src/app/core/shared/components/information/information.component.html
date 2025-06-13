@@ -1,0 +1,22 @@
+<div class="information" [class]="isLeft ? '' : 'presentation-right'">
+
+    @if(isLeft){
+        <div class="separator black"></div>
+    }
+
+    <div class="information--details">
+        <h3>{{information?.title}}</h3>
+        @if(information?.languages){
+            <p>{{information?.languages}}</p>
+        }
+        <p>{{information?.details}}</p>
+        @if(information?.description){
+            <p>{{information?.description}}</p>
+        }
+    </div>
+
+    @if(!isLeft){
+        <div class="separator black"></div>
+    }
+
+</div>
