@@ -1,0 +1,25 @@
+:root {
+    --white : #f1f1f1;
+    --white-rgb : 241, 241, 241;
+    --black : #131313;
+    --yellow : #f1ca18;
+    --yellow-dark : #dfb706;
+    --yellow-rgb : 225, 185, 9;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jost", serif;   
+}
+
+body {
+    background-color: var(--white);
+    width: 100vw;
+    min-height: 100vh;
+    overflow: scroll;
+}
+
+
+
