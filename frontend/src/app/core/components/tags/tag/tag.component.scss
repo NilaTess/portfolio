@@ -1,0 +1,18 @@
+.tag {
+
+    padding: 6px;
+    margin: 4px;
+    width: fit-content;
+
+    border-radius: 10px;
+}
+
+.black-tag {
+    background-color: var(--black);
+    color: var(--white)
+}
+
+.white-tag {
+    background-color: var(--white); 
+    color: var(--black);
+}

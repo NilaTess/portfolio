@@ -1,9 +1,15 @@
-import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { slideToLeft, slideToRight } from '../../core/animations';
-import { InformationDivComponent } from "../../core/shared/components/information-div/information-div.component";
-import { Information } from '../../core/shared/interfaces/Information';
+import { InformationDivComponent } from "../../core/components/informations/information-div/information-div.component";
+import { Information } from '../../core/interfaces/Information';
 import { ContactComponent } from "../components/contact/contact.component";
 import { PersonalSummaryComponent } from '../components/personal-summary/personal-summary.component';
+import { Project } from '../../core/interfaces/Project';
+import { ProjectDivComponent } from "../../projects/project-div/project-div.component";
+import { projects } from '../../core/models/projects';
+import { NavComponent } from "../../nav/nav.component";
+import { sectionInformationList } from '../../core/models/sectionInformationList';
+import { CompetenceComponent } from "../components/competence/competence.component";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +17,10 @@ import { PersonalSummaryComponent } from '../components/personal-summary/persona
   imports: [
     PersonalSummaryComponent,
     ContactComponent,
-    InformationDivComponent
+    InformationDivComponent,
+    ProjectDivComponent,
+    NavComponent,
+    CompetenceComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -22,13 +31,13 @@ import { PersonalSummaryComponent } from '../components/personal-summary/persona
 })
 export class HomeComponent implements AfterViewInit {
 
-  @ViewChildren('slideElement') animationElements!: QueryList<ElementRef>;
+  @ViewChild(ProjectDivComponent) projectDivElement! : ProjectDivComponent;
   @ViewChildren(PersonalSummaryComponent) personalSummaryElements! : QueryList<PersonalSummaryComponent>;
   @ViewChildren(InformationDivComponent) informationDivElements! : QueryList<InformationDivComponent>;
   
 
 
-  visibleElements: string[] = ["hidden", "hidden", "hidden", "hidden"];
+  visibleElements: string[] = ["hidden", "hidden", "hidden", "hidden", "hidden"];
 
   observer? : IntersectionObserver;
 
@@ -48,8 +57,10 @@ export class HomeComponent implements AfterViewInit {
             this.visibleElements[1] = "visible";
           } else if (entry.target.classList.value.includes('EXPERIENCE')) {
             this.visibleElements[2] = "visible";
-          } else if (entry.target.classList.value.includes('PROJET')){
+          } else if (entry.target.classList.value.includes('FORMATION')){
             this.visibleElements[3] = "visible";
+          } else {
+            this.visibleElements[4] = "visible";
           }
 
           obs.unobserve(entry.target);
@@ -58,6 +69,8 @@ export class HomeComponent implements AfterViewInit {
       });
     }, options);
 
+
+    observer.observe(this.projectDivElement.slideElement.nativeElement);
 
     this.informationDivElements.forEach(el => {
       console.log(el)
@@ -77,48 +90,7 @@ export class HomeComponent implements AfterViewInit {
   }
 
 
-  sectionInformationsList : {section : string ; informationsList : Information[]}[] = [
-    {
-      section : "EXPERIENCE",
-      informationsList: [
-        {
-          title: "Tutorat à l'IUT Lyon 1",
-          details: "IUT Lyon 1, Villeurbanne | Septembre 2024 - À ce jour",
-          description: "Aide au devoirs et à l’apprentissage pour les BUT1 de ma formation"
-        },
-        {
-          title: "Vice-Secrétaire et responsable du Pôle prévention au sein du BDE",
-          details: "IUT Lyon 1, Villeurbanne | Mars 2024 - À ce jour",
-          description: "Mise en place d’évènements pour les étudiants du BUT informatique"
-        },
-        {
-          title: "Groupe de Musique",
-          details: "IUT Lyon 1, France | Septembre 2023 - Juin 2024",
-          description: "Création et reprise de chansons"
-        },
-        {
-          title: "Théâtre",
-          details: "Collège et Lycée, Lyon 2 | 6ème - Terminale",
-          description: "Mise en place de pièces ou représentation de pièces existantes"
-        }
-      ]
-    },
-    {
-      section: "PROJETS",
-      informationsList: [
-        {
-          title: "Projet de site web permettant la gestion de projet pour des étudiants du BUT informatique",
-          details: "IUT Lyon 1, Villeurbanne | Semestre 3 et 4 BUT informatique",
-          description: "Inspirée de l'application Notion, cette application orientée IUT informatique permet de créer un espace de travail partagé pour réaliser un projet. Cet espace offre un suivi visuel et dynamique des tâches à réaliser ainsi qu'un aperçu du dépôt Git, élément primordial pour tout projet informatique.",
-          languages: "PHP | HTML | CSS | JS"
-        },
-        {
-          title: "Projet d’application de gestion de vol",
-          details: "IUT Lyon 1, Villeurbanne | Semestre 2 BUT informatique",
-          description: "Permet de simuler une journée de vol grâce à l'importation de données en CSV. L'application simule le vol des avions et renvoie le nombre de collisions possibles durant cette journée. Une carte interactive permet de complexifier la simulation et de rendre l'utilisateur actif. De plus, des paramètres donnent la possibilité d'interagir avec les algorithmes de reconnaissance de collisions.",
-          languages: "Java"
-        }
-      ]
-    }
-  ]
+  sectionInformationsList : {section : string ; informationsList : Information[]}[] = sectionInformationList;
+
+  projectInformations : Project[] = projects;
 }

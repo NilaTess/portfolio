@@ -21,39 +21,4 @@
         background-color: rgb(255, 255, 255); 
         transform: translateX(-50%);
     }
-
-    a {
-        display: flex;
-        align-items: center;
-        margin : 3%;
-
-        text-decoration: none !important;
-        color : var(--white);
-
-        &:hover {
-            color : var(--yellow); 
-        }
-
-        p {
-            margin: 10px;
-            font-weight: bold;
-        }
-    }
-}
-
-
-/* ARROW */
-
-
-.arrow{
-    display: flex;
-    justify-content: center;
-
-    img {
-        position: relative;
-        z-index: 1;
-    
-        margin-top: -3vh;
-        color : var(--black);
-    }
 }

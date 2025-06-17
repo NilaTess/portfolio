@@ -1,0 +1,54 @@
+<div class="project">
+    <svg (click)="goToHome()" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+    <h1>{{project?.slug | uppercase }}</h1>
+    <div class="arrow">
+        <img src="assets/images/Bottom_arrow.svg" width="150" height="150" alt="arrow">
+    </div>
+
+    <div class="project--items">
+
+        <div class="project--items__item" >
+            <div class="project--items__item__title">
+                <div class="separator black"></div>
+                <h2>Description</h2>
+            </div>
+            <div class="project--items__item__description">
+                <img [src]="project?.urlImage" alt="">
+                <p>{{project?.description}}</p>
+            </div>
+        </div>
+
+        <div class="project--item" >
+            <div class="project--items__item__title">
+                <div class="separator black"></div>
+                <h2>Compétences entrainés</h2>
+            </div>
+            <div class="project--items__item__competences">
+
+                @for(skill of project?.skills; track $index){
+                    <div>
+                        <h3>{{skill.id}}</h3>
+                        <p><b>{{skill.name}}</b> : {{skill.description}}</p>
+                    </div>
+                } 
+            </div>
+        </div>
+
+
+        <div class="project--item" >
+            <div class="project--items__item__title">
+                <div class="separator black"></div>
+                <h2>Images complémentaires</h2>
+            </div>
+            <div class="project--items__item__images">
+
+                @for(image of project?.images; track $index){
+                   <img [src]="image" alt="test">
+                } 
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>

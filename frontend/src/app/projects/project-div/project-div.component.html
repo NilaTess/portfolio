@@ -1,0 +1,16 @@
+<div class="project-div" #slideElement [@slideInRight]="visibleElement == 'visible' ? 'visible' : 'hidden' " >
+
+    <h2 id="PROJETS">PROJETS</h2>
+
+    @for(project of projectList; track $index) {
+
+        <div class="project-div--item" (click)="goToProject(project.slug)">
+
+            <img [src]="project.urlImage" alt="test">
+            <app-information [information]="project.information" [isLeft]="true"></app-information>
+
+        </div>
+
+    }
+    
+</div>

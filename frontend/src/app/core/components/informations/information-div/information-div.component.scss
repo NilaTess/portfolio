@@ -1,0 +1,23 @@
+.information-div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap : 50px;
+    padding: 0 80px 80px;
+
+    background-color: var(--yellow);
+    border-radius: 10px;
+    width: 60vw;
+    box-shadow: -5px 5px 10px rgba(var(--yellow-rgb), 0.5);
+
+
+    h2 {
+        text-align: center;
+        position: relative;
+        top : -5.5vh;
+        margin-bottom : -4vh;
+
+        font-size: 70px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}

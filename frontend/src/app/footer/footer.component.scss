@@ -1,0 +1,43 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    padding: 50px 60px 20px;
+
+    background-color: var(--black);
+
+    > div:first-of-type {
+        padding: 0 10rem;
+
+        height: 2px;
+        width: 100%;
+        background-color: var(--yellow);
+        border-radius: 1em;
+
+    }
+
+    > div:last-of-type {
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap : 2rem;
+    }
+
+    > div:last-of-type > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        margin: 6px;
+    }
+
+    > p {
+        align-self: center;
+        position: relative;
+
+        margin-top: 100px;
+        
+        color: var(--white);
+    }
+}
