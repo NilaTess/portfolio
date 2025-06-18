@@ -5,7 +5,12 @@ export const sectionInformationList : {section : string ; informationsList : Inf
       section : "EXPERIENCES",
       informationsList: [
         {
-          title: "Stag de 8 semaines dans l'entreprise Ouidou",
+          title: "VP Communication à la Student CLUB",
+          details: "IUT Lyon 1, Villeurbanne | Juin 2025 - À ce jour",
+          description: "Mise en place d’évènements pour les étudiants du BUT informatique"
+        },
+        {
+          title: "Stage de 8 semaines dans l'entreprise Ouidou",
           details: "4 Place Amédée Bonnet, Lyon 2eme | Avril 2025 - Juin 2025",
           description: "Intégration dans une éuipe en charge de la création d'une appliation de gestion de staffing interne"
         },
@@ -16,7 +21,7 @@ export const sectionInformationList : {section : string ; informationsList : Inf
         },
         {
           title: "Vice-Secrétaire et responsable du Pôle prévention au sein du BDE",
-          details: "IUT Lyon 1, Villeurbanne | Mars 2024 - À ce jour",
+          details: "IUT Lyon 1, Villeurbanne | Mars 2024 - Mars 2025",
           description: "Mise en place d’évènements pour les étudiants du BUT informatique"
         },
         {

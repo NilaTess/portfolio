@@ -17,7 +17,7 @@ export const projects : Project[] = [
         urlImage: "assets/images/Projet-WorkPlace.png",
         skillsSection : [
             {
-                title : "Réalisation",
+                title : "Réaliser",
                 skills : [
                     {
                         id: "AC11.01 | Nv1",
@@ -178,7 +178,7 @@ export const projects : Project[] = [
         urlImage : "assets/images/Projet-Simulation.png",
         skillsSection : [
             {
-                title : "Réalisation",
+                title : "Réaliser",
                 skills : [
                     {
                         id: "AC11.01 | Nv1",
