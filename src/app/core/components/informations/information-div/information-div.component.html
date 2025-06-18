@@ -5,6 +5,5 @@
     @for (information of informationsList; track information.title; let i = $index){
 
         <app-information [information]="information" [isLeft]="$index % 2 == 0"></app-information>
-        
     }
 </div>

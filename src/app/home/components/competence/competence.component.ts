@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Skill } from '../../../core/interfaces/Skill';
-import { personalSkills, professionalSkills } from '../../../core/models/competences';
+import { personalSkills, professionalSkills } from '../../../core/models/skills';
 
 @Component({
   selector: 'app-competence',
@@ -46,7 +46,6 @@ export class CompetenceComponent {
   }
 
   private reset(): void {
-    console.log("caca")
     this.professionalSkills = [...professionalSkills];
     this.personalSkills = [...personalSkills];
   }

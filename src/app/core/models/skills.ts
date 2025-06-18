@@ -3,12 +3,12 @@ import { Skill } from "../interfaces/Skill";
 export const professionalSkills : Skill[] = [
     {
         title: "Développement d’applications",
-        descriptions : ["Java, C","HTML 5, CSS 3, JavaScript ", "PHP", "SQL, PL/SQL"]
+        descriptions : ["Java, C","HTML 5, CSS 3, JavaScript", "PHP", "SQL, PL/SQL", "Angular, Vue.js, Symfony"]
     },
 
     {
         title: "Maîtrise d’outils informatiques",
-        descriptions : ["VsCode, NetBeans, CodeBlocks, SqlDevelopper","Notion, Obsidian, Git, Trello, Word"]
+        descriptions : ["VsCode, NetBeans, CodeBlocks", "Scalar", "SqlDevelopper, DBeaver" ,"Notion, Obsidian, Git, Trello, Word"]
     },
 
     {

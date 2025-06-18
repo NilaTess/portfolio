@@ -34,8 +34,9 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild(ProjectDivComponent) projectDivElement! : ProjectDivComponent;
   @ViewChildren(PersonalSummaryComponent) personalSummaryElements! : QueryList<PersonalSummaryComponent>;
   @ViewChildren(InformationDivComponent) informationDivElements! : QueryList<InformationDivComponent>;
-  
 
+  sectionInformationsList : {section : string ; informationsList : Information[]}[] = sectionInformationList;
+  projectInformations : Project[] = projects;
 
   visibleElements: string[] = ["hidden", "hidden", "hidden", "hidden", "hidden"];
 
@@ -50,7 +51,6 @@ export class HomeComponent implements AfterViewInit {
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          console.log(entry.target.classList.value)
           if( entry.target.classList.contains('title--item__image')) {
             this.visibleElements[0] = "visible";
           } else if (entry.target.classList.contains('title--items__summary')){
@@ -73,7 +73,6 @@ export class HomeComponent implements AfterViewInit {
     observer.observe(this.projectDivElement.slideElement.nativeElement);
 
     this.informationDivElements.forEach(el => {
-      console.log(el)
       observer.observe(el.slideElement.nativeElement);
     });
 
@@ -88,9 +87,4 @@ export class HomeComponent implements AfterViewInit {
   ngOnDestroy() {
     this.observer?.disconnect();
   }
-
-
-  sectionInformationsList : {section : string ; informationsList : Information[]}[] = sectionInformationList;
-
-  projectInformations : Project[] = projects;
 }

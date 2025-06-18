@@ -1,11 +1,11 @@
 import { Information } from "./Information";
-import { SchoolSkill } from "./SchoolSkill";
+import { SckoolSkillSection } from "./SchoolSkill";
 
 export interface Project {
     slug : string,
     information : Information,
     urlImage : string,
     description : string,
-    skills : SchoolSkill[],
+    skillsSection : SckoolSkillSection[],
     images : string[]
 }

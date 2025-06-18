@@ -24,7 +24,6 @@ export class ProjectDivComponent {
   constructor(private readonly router: Router) {}
 
   goToProject(slug: string): void {
-    console.log("salut");
     this.router.navigate(['/project', slug]);
   }
 

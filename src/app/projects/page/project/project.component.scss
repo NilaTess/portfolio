@@ -2,7 +2,7 @@
     h1 {
         text-align: center;
         padding: 10px;
-        font-size: 250px;
+        font-size: 220px;
         background-color: var(--yellow);
 
         border-bottom: 60px solid var(--black);
@@ -36,7 +36,7 @@
             &__title {
 
                 display: flex;
-                margin: 30px 75px 100px 30px;
+                margin: 30px 75px 80px 30px;
 
                 h2 {
                     margin-left: 5px;
@@ -45,50 +45,56 @@
 
             }
 
-            &__description , &__competences {
+            &__description {
 
                 display: flex;
                 flex-direction: row;
+                align-items: center;
+                justify-content: center;
                 gap: 20px;
                 margin: 5vh 20vw;
                 
             }
 
-            &__description {
-                align-items: center;
-                justify-content: center;
-            }
-
             &__competences {
 
-                display: flex;
-                flex-direction: column;
-                gap : 50px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap : 45px;
+                margin: 2vh 10vw;
+                
+
+                h3 {
+                    font-size: 34px;
+                    margin-left: -20px;
+                }  
 
                 div {
-
                     display: flex;
-                    flex-direction: row;
-                    align-items: center;  
+                    flex-direction: column;
+                    gap: 30px;
+                
+                    div {
 
-                    gap: 40px;
-
-                    h3 {
                         display: flex;
-                        justify-content: center;
-                        align-items: center;   
-                        background-color: var(--yellow);
-                        color: var(--black);
-                        font-size: 25px;
+                        flex-direction: row;
+                        align-items: center; 
 
-                        padding: 0 10px;
-                    
-                        min-width: 130px;
-                        height: 80px;
+                        gap: 45px;
 
-                        border-radius: 10px ;
+                        h4 {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;   
+                            background-color: var(--yellow);
+                            color: var(--black);
+                            font-size: 18px;
+
+                            padding: 15px 10px;
+                            min-width: 140px;
+                            border-radius: 10px ;
+                        }
                     }
-
                 }
          
             }

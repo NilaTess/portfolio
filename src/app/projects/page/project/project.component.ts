@@ -25,12 +25,9 @@ export class ProjectComponent implements OnInit {
     this.slug = this.route.snapshot.paramMap.get('slug');
 
     this.project = projects.filter(project => project.slug == this.slug)[0];
-    console.log(this.project)
   }
 
   goToHome(): void {
     this.router.navigate(['/home']);
   }
-
-  
 }

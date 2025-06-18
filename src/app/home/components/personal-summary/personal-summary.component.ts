@@ -16,9 +16,6 @@ import { slideToLeft, slideToRight } from '../../../core/animations';
 export class PersonalSummaryComponent {
 
   @Input() visibleElements : string[] = [];
-
   @ViewChildren('slideElement') slideElements!: QueryList<ElementRef>;
-
-
 
 }

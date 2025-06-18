@@ -21,7 +21,9 @@
         @for(task of professionalSkills; track $index){
             <div cdkDrag class="task">
                 <p>{{task.title}}</p>
-                <p>{{task.descriptions}}</p>
+                @for(description of task.descriptions; track $index){
+                  <p>- {{description}}</p>
+                }
             </div>
         }
       </div>
@@ -31,7 +33,9 @@
         @for(task of personalSkills; track $index){
             <div cdkDrag class="task">
                 <p>{{task.title}}</p>
-                <p>{{task.descriptions}}</p>
+                @for(description of task.descriptions; track $index){
+                  <p>- {{description}}</p>
+                }
             </div>
         }
       </div>
